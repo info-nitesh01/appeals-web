@@ -1,0 +1,67 @@
+{
+  "appeals": [
+    {
+      "id": "1",
+      "taxYear": 2024,
+      "company": "ABC Textiles Ltd",
+      "state": "California",
+      "assessor": "County Assessor Office",
+      "accountNumber": "ACC-001",
+      "appealed": true
+    },
+    {
+      "taxYear": 2025,
+      "company": "ABC",
+      "state": "Gujarat",
+      "assessor": "ABC",
+      "accountNumber": "ASC-123",
+      "appealed": false,
+      "id": "e9aa"
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "title": "Team Meeting",
+      "start": "2025-09-15T10:00:00.000Z",
+      "end": "2025-09-15T11:30:00.000Z",
+      "type": "event",
+      "allDay": false,
+      "description": "Weekly team sync"
+    },
+    {
+      "title": "Project Deadline",
+      "start": "2025-09-20T15:00:00.000Z",
+      "end": "2025-09-20T16:00:00.000Z",
+      "type": "event",
+      "allDay": false,
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "title": "Client Presentation",
+      "start": "2023-09-22T14:00:00.000Z",
+      "end": "2023-09-22T15:30:00.000Z",
+      "type": "event",
+      "allDay": false,
+      "description": "Quarterly review with client"
+    },
+    {
+      "id": "4",
+      "title": "Birthday Party",
+      "start": "2023-09-25T18:00:00.000Z",
+      "end": "2023-09-25T22:00:00.000Z",
+      "type": "event",
+      "allDay": false,
+      "description": "John's birthday celebration"
+    },
+    {
+      "title": "check 01",
+      "start": "2025-09-14T18:30:00.000Z",
+      "end": "2025-09-15T13:33:00.000Z",
+      "type": "reminder",
+      "allDay": false,
+      "id": "c3f3"
+    }
+  ]
+}

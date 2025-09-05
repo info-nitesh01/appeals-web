@@ -1,0 +1,236 @@
+@import "tailwindcss";
+@plugin './hero.ts';
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --body-space: 20px;
+  --background: #f6f7f8;
+  --foreground: #171717;
+  --white: #fff;
+  --main-color: #3fc3ac;
+
+  --sidebar-border-color: rgba(0, 0, 0, 0.1);
+  --sidebar-bg-color: #2c4e6c;
+  --sidebar-hover: #ffffff33;
+  --sidebar-width: 230px;
+
+  --topbar-height: 3.5rem;
+
+  --card-radius: 12px;
+
+  --btn-radius: 5px;
+
+  --thead-color: #ecf3f9;
+  --thead-font-color: #5f7181;
+
+  /* fonts */
+  --font-h1: clamp(24px, 4vw, 32px);
+  --font-h2: clamp(22px, 3.8vw, 28px);
+  --font-h3: clamp(20px, 3.5vw, 24px);
+  --font-h4: clamp(18px, 3vw, 20px);
+  --font-h5: clamp(14px, 2.8vw, 16px);
+  --font-h6: clamp(12px, 2.5vw, 14px);
+  --font-h7: clamp(10px, 2vw, 12px);
+  --font-h8: clamp(8px, 1.5vw, 10px);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+  padding: var(--body-space);
+  overflow: hidden;
+}
+
+/* Header CSS */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  height: var(--topbar-height);
+  margin: var(--body-space);
+  gap: 0.75rem;
+  background-color: var(--white);
+  border-radius: var(--card-radius);
+}
+
+/* Sidebar CSS */
+.sidebar {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(0);
+  background-color: var(--sidebar-bg-color);
+  color: var(--white);
+  padding: var(--body-space);
+  transition-property: transform, width;
+  transition-duration: 200ms;
+}
+
+.sidebar nav {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: var(--btn-radius);
+  padding: 15px;
+  font-size: var(--font-h6);
+  line-height: 1.25rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidebar.collapsed .sidebar-link {
+  padding: 11px;
+  justify-content: center;
+}
+
+.sidebar-collapse-btn {
+  position: absolute;
+  right: -14px;
+  top: 25px;
+  background: var(--white);
+  color: var(--main-color);
+  padding: 7px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 10px 0px #6b72804d;
+}
+
+.sidebar-link:hover {
+  background: var(--sidebar-hover);
+}
+
+.sidebar-link.active {
+  background: var(--sidebar-hover);
+  font-weight: 500;
+}
+
+.border-root {
+  border-color: var(--sidebar-border-color);
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    position: static;
+    margin-top: calc(var(--topbar-height) + var(--body-space));
+    border-radius: var(--card-radius);
+    transform: translateX(0);
+    z-index: 10;
+    height: calc(94dvh - (var(--topbar-height) + var(--body-space)));
+  }
+}
+
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+@media (min-width: 1024px) {
+  .sidebar.closed {
+    transform: translateX(0);
+  }
+}
+
+.sidebar.expanded {
+  width: var(--sidebar-width);
+}
+
+.sidebar.collapsed {
+  width: 5rem;
+}
+
+.main-content main {
+  margin-top: calc(var(--topbar-height) + var(--body-space));
+}
+.main-content main {
+  height: calc(100dvh - var(--topbar-height));
+  margin-left: var(--body-space);
+}
+
+@media screen and (max-width: 1024px) {
+  .main-content main {
+    margin-left: 0;
+  }
+}
+
+.main-content .page-content {
+  height: calc(94% - var(--topbar-height));
+  overflow: auto;
+  background: var(--white);
+  border-radius: var(--card-radius);
+}
+
+/* Page CSS */
+.page-heading {
+  font-size: var(--font-h6);
+  font-weight: 500;
+  line-height: 1.25rem;
+  width: fit-content;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+
+.profile-dd {
+  border-radius: 50%;
+}
+
+.page-heading::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--main-color);
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+.appeals-table .bg-content1 {
+  box-shadow: none;
+  padding: 0;
+}
+.appeals-table .bg-content1 table thead th {
+  background-color: var(--thead-color);
+  color: var(--thead-font-color);
+  text-transform: uppercase;
+  padding: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .table-container {
+    max-width: 82dvw;
+  }
+}
+
+button {
+  border-radius: var(--btn-radius);
+}
+
+button.bg-primary {
+  background-color: var(--main-color);
+}
+
+button.bg-default {
+  background-color: hsl(var(--heroui-default) / 1);
+}
+
+[data-slot="input-wrapper"] {
+  border-radius: var(--btn-radius);
+  border: 1px solid var(--sidebar-border-color);
+}

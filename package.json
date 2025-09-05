@@ -1,0 +1,41 @@
+{
+  "name": "next-admin-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint",
+    "json:dev": "json-server --watch src/data/apidata/db.json --port 8001"
+  },
+  "dependencies": {
+    "@heroui/react": "^2.8.3",
+    "@internationalized/date": "^3.9.0",
+    "@reduxjs/toolkit": "^2.9.0",
+    "date-fns": "^4.1.0",
+    "moment": "^2.30.1",
+    "next": "15.5.2",
+    "next-themes": "^0.4.6",
+    "react": "19.1.0",
+    "react-big-calendar": "^1.19.4",
+    "react-dom": "19.1.0",
+    "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-big-calendar": "^1.16.2",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.2",
+    "json-server": "^1.0.0-beta.3",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.12",
+    "typescript": "^5"
+  }
+}
